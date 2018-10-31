@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './scss/main.scss';
-import simpleComponent from './components/simpleComponent';
+import { Users } from './components/Wrapper';
 
 const element: string = `
 <div>
@@ -12,8 +12,6 @@ const element: string = `
 // Just for show
 document.write(element);
 
-const reactElement = React.createElement(simpleComponent, {
-  message: 'React-y.'
-});
+const reactElement = React.createElement(Users);
 
 ReactDOM.render(reactElement, document.getElementById('app-root'));
