@@ -2,16 +2,18 @@
 import { useState, useEffect } from 'react'
 
 let users: string[] = [];
+let proxy: () => void;
 
 export function getUsers() {
-  const [user, setUser]: [string, (user: string) => void] = useState(users);
+  const [user, setUser]: [string[], (user: string[]) => void] = useState(users);
 
   useEffect(() => {
-    setUser(user);
+    proxy = () => setUser(user);
   });
   return user;
 }
 
 export function addUser(user: string) {
   users.push(user);
+  proxy();
 }
