@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 let users: string[] = [];
 
 export function getUsers() {
-  const [user, setUser] = useState(users);
+  const [user, setUser]: [string, (user: string) => void] = useState(users);
 
   useEffect(() => {
     setUser(user);
