@@ -1,5 +1,5 @@
 import React from 'react';
-import {useUsers} from '../hooks/user';
+import {useUsers} from '../hooks/User';
 // @ts-ignore
 import { Pane, Heading, UnorderedList, ListItem, Text } from 'evergreen-ui';
 

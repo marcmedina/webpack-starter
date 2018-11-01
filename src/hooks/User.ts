@@ -11,10 +11,7 @@ export function useUsers() {
     events.on('addUser', setUsers);
 
     return () => {
-      console.log("Removing listener");
-      events.removeListener('addUser', () => {
-        console.log("Removed");
-      });
+      events.removeListener('addUser', setUsers);
     }
   });
 
