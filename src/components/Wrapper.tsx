@@ -1,14 +1,16 @@
 import React from 'react';
-import {UserAdd} from "./UserAdd";
-import {UserList} from "./UserList";
-import {UserListTwo} from "./UserListTwo";
+// @ts-ignore
+import { Pane } from 'evergreen-ui';
+import { UserAdd } from "./UserAdd";
+import { UserList } from "./UserList";
+import { UserSearch } from "./UserSearch";
 
 export function Users(): JSX.Element {
   return (
-    <div>
-      <UserListTwo/>
-      <UserList/>
-      <UserAdd/>
-    </div>
+    <Pane>
+      <UserList />
+      <UserAdd />
+      <UserSearch />
+    </Pane>
   );
 }

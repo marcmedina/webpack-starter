@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "events": "^3.0.0",
+    "evergreen-ui": "^4.2.0",
     "react": "^16.7.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0"
   },

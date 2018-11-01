@@ -1,19 +1,15 @@
 // @ts-ignore
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import { getUsers } from '../services/UserService';
+import events from '../services/Eventer';
 
-let users: string[] = [];
-let proxy: () => void;
 
-export function getUsers() {
-  const [user, setUser]: [string[], (user: string[]) => void] = useState(users);
+export function useUsers() {
+  const [users, setUsers]: [string[], (user: string[]) => void] = useState(getUsers());
 
   useEffect(() => {
-    proxy = () => setUser(user);
+    events.on('addUser', setUsers);
   });
-  return user;
-}
 
-export function addUser(user: string) {
-  users.push(user);
-  proxy();
+  return users;
 }
